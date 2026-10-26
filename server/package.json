@@ -1,0 +1,33 @@
+{
+  "name": "imovies-server",
+  "version": "1.0.0",
+  "description": "IMovies Backend RESTful API with Express, Node.js, MongoDB and JWT Authentication",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/utils/seeder.js",
+    "test": "node src/utils/testSuite.js"
+  },
+  "keywords": [
+    "imovies",
+    "express",
+    "mongodb",
+    "jwt",
+    "cinema-booking"
+  ],
+  "author": "Aditya Rajpoot",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

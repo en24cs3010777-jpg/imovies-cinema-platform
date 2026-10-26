@@ -1,0 +1,269 @@
+/* Google Font & Root Variables */
+:root {
+  --cinema-red: #e50914;
+  --cinema-red-hover: #b80710;
+  --cinema-gold: #ffc107;
+  --cinema-dark-bg: #0b0c10;
+  --cinema-card-bg: #13151b;
+  --cinema-surface: #1f232e;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--cinema-dark-bg);
+  color: #f8f9fa;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* App Wrapper */
+.app-wrapper {
+  background-color: var(--cinema-dark-bg);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b303c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cinema-red);
+}
+
+/* Hero Backdrop */
+.hero-banner {
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-backdrop {
+  opacity: 0.85;
+}
+
+/* Hover transitions */
+.transition-all {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 9, 20, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.15);
+}
+
+.card-img-zoom {
+  transition: transform 0.4s ease;
+}
+
+.hover-card:hover .card-img-zoom {
+  transform: scale(1.06);
+}
+
+.poster-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-card:hover .poster-overlay {
+  opacity: 1;
+}
+
+/* Cinema Curved Screen Indicator */
+.cinema-screen-container {
+  perspective: 600px;
+}
+
+.cinema-screen-curve {
+  width: 75%;
+  height: 12px;
+  background: linear-gradient(180deg, rgba(229, 9, 20, 0.9) 0%, rgba(229, 9, 20, 0.1) 100%);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 8px 32px rgba(229, 9, 20, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+  transform: rotateX(-30deg);
+}
+
+/* Seat Grid Buttons */
+.seat-row {
+  margin-bottom: 4px;
+}
+
+.row-label {
+  width: 28px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.seat-aisle-gap {
+  width: 24px;
+}
+
+.seat-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.seat-btn:hover:not(:disabled) {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+.seat-num {
+  font-size: 0.6rem;
+  font-family: monospace;
+  position: absolute;
+  bottom: 2px;
+  opacity: 0.8;
+}
+
+.seat-icon {
+  font-size: 0.85rem;
+  margin-top: -2px;
+}
+
+/* Seat Statuses */
+.seat-standard {
+  background-color: rgba(30, 41, 59, 0.7);
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.seat-premium {
+  background-color: rgba(79, 70, 229, 0.25);
+  color: #a5b4fc;
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.seat-vip {
+  background-color: rgba(245, 158, 11, 0.25);
+  color: #fde68a;
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.seat-selected {
+  background-color: #00e676 !important;
+  color: #000 !important;
+  border-color: #00e676 !important;
+  font-weight: bold;
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 230, 118, 0.7);
+}
+
+.seat-booked {
+  background-color: #1e2029 !important;
+  color: #4b5563 !important;
+  border-color: #2e3440 !important;
+  opacity: 0.45;
+  cursor: not-allowed !important;
+}
+
+/* Seat Legend Indicators */
+.legend-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.seat-available-indicator {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.seat-selected-indicator {
+  background-color: #00e676;
+}
+
+.seat-booked-indicator {
+  background-color: #1e2029;
+  border: 1px solid #4b5563;
+}
+
+.seat-vip-indicator {
+  background-color: rgba(245, 158, 11, 0.8);
+}
+
+.seat-premium-indicator {
+  background-color: rgba(99, 102, 241, 0.8);
+}
+
+.seat-standard-indicator {
+  background-color: rgba(148, 163, 184, 0.5);
+}
+
+/* Backdrop dark blur modal */
+.backdrop-dark-blur {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* Cinema E-Ticket Component */
+.cinema-e-ticket {
+  background-color: #151821 !important;
+}
+
+.ticket-notch {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.notch-left {
+  left: -14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.notch-right {
+  right: -14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+/* Print CSS */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .cinema-e-ticket, .cinema-e-ticket * {
+    visibility: visible;
+  }
+  .cinema-e-ticket {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .btn, .navbar, footer {
+    display: none !important;
+  }
+}

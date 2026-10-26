@@ -1,0 +1,30 @@
+{
+  "name": "imovies",
+  "version": "1.0.0",
+  "description": "IMovies - Modern Cinema Ticket Reservation & Box Office Management Platform",
+  "main": "server/src/server.js",
+  "scripts": {
+    "start": "node server/src/server.js",
+    "dev": "concurrently --kill-others-on-fail -n \"BACKEND,FRONTEND\" -c \"cyan,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "seed": "node server/src/utils/seeder.js",
+    "test": "npm test --prefix server",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "keywords": [
+    "imovies",
+    "cinema-booking",
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "seat-reservation"
+  ],
+  "author": "Aditya Rajpoot",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
